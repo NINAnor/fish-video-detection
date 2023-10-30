@@ -40,4 +40,12 @@ docker compose --profile prod build
 docker compose --profile prod run --rm app
 ```
 
+A desktop launcher can be installed as well:
+```bash
+cp launcher/fiskai_launcher.sh ~/.local/bin
+cp launcher/fiskai.desktop ~/.local/share/applications/
+```
+
+## Notes
+
 **Note:** Before running the project, you will need to pull the large files (model weights) using Git LFS. Run `git lfs pull` to download the files.

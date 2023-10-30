@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=FiskAI
+Comment=
+Exec=.local/bin/fiskai_launcher.sh
+Terminal=false
