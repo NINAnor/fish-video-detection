@@ -1,4 +1,5 @@
 x-common: &common
+  image: ghcr.io/ninanor/bachelor-oppgave-nina:nina
   build: .
   deploy:
     resources:
