@@ -20,5 +20,5 @@ RUN --mount=type=cache,sharing=locked,target=/root/.cache/pypoetry \
     poetry install --no-root
 
 COPY app app
-copy data data
+COPY data/models/v8s-640-classes-augmented-backgrounds.pt data/models/
 CMD ["poetry", "run", "python", "-c", "from app import main; main.main()"]
