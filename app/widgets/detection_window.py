@@ -408,11 +408,6 @@ class DetectionWindow(
         self.worker.start()
 
         self.__add_stop_button()
-
-        # Hacky fix for disabling the output directory button on the VDI
-        if sys.platform != "linux":
-            self.__add_open_output_dir_button(output_folder_path)
-
         self.__add_close_button()
 
     def update_time_prediction_label(self, text: str) -> None:
@@ -428,22 +423,6 @@ class DetectionWindow(
         self.stop_button = QPushButton("Stop")
         self.stop_button.clicked.connect(self.__stop_button_clicked)
         self.dialog_layout.addWidget(self.stop_button)
-
-    def __add_open_output_dir_button(self, output_folder_path: Path) -> None:
-        self.open_output_dir_button = QPushButton("Open output directory")
-        self.open_output_dir_button.hide()
-
-        def on_open_output_dir() -> None:
-            if sys.platform == "win32":
-                os.startfile(str(output_folder_path))  # pylint: disable=no-member
-            elif sys.platform == "linux":
-                os.system(f"xdg-open '{output_folder_path}'")
-            else:
-                raise OSError("Unsupported operating system")
-
-        self.open_output_dir_button.clicked.connect(on_open_output_dir)
-
-        self.dialog_layout.addWidget(self.open_output_dir_button)
 
     def __add_close_button(self) -> None:
         self.close_button = QPushButton("Close")
@@ -464,7 +443,6 @@ class DetectionWindow(
     def worker_finished(self) -> None:
         """Called when the worker has finished."""
         # Show button to close window now that the worker has finished
-        self.open_output_dir_button.show()
         self.close_button.show()
         self.stop_button.hide()
 
