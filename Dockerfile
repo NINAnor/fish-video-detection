@@ -1,5 +1,15 @@
 FROM python:3.10
 
+ADD \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/v8m-classes-augmented.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/v8s-640-classes-augmented-backgrounds.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/yolov8l.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/yolov8m.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/yolov8n.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/yolov8s.pt \
+    https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/yolov8x.pt \
+    /app/data/models/
+
 # https://stackoverflow.com/questions/68036484/qt6-qt-qpa-plugin-could-not-load-the-qt-platform-plugin-xcb-in-even-thou#comment133288708_68058308
 RUN --mount=type=cache,sharing=locked,target=/var/cache/apt \
     --mount=type=cache,sharing=locked,target=/var/lib/apt \
@@ -20,5 +30,4 @@ RUN --mount=type=cache,sharing=locked,target=/root/.cache/pypoetry \
     poetry install --no-root
 
 COPY app app
-COPY data/models/v8s-640-classes-augmented-backgrounds.pt data/models/
 CMD ["poetry", "run", "python", "-c", "from app import main; main.main()"]
