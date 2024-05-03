@@ -48,4 +48,4 @@ cp launcher/fiskai.desktop ~/.local/share/applications/
 
 ## Notes
 
-**Note:** Before running the project, you will need to pull the large files (model weights) using Git LFS. Run `git lfs pull` to download the files.
+**Note:** Before running the project without Docker, you will need to pull the large files (model weights) from [GitHub release v0.1.0](https://github.com/NINAnor/fisk-ai/releases/tag/v0.1.0).
