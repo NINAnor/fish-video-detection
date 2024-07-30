@@ -199,9 +199,8 @@ class DataManager:
         """
         try:
             cap = cv2.VideoCapture(str(path))
-            fps = cap.get(cv2.CAP_PROP_FPS)
-            frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-            duration = frame_count / fps
+            cap.set(cv2.CAP_PROP_POS_AVI_RATIO, 1)
+            duration = cap.get(cv2.CAP_PROP_POS_MSEC)
             return str(datetime.timedelta(seconds=duration))
         except cv2.error as error:
             logger.error("Error occurred: %s", error)
