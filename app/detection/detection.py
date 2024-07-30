@@ -7,7 +7,7 @@ from typing import Any, Callable, List, Tuple
 import cv2
 import torch
 from tqdm import tqdm
-from ultralytics.yolo.utils.plotting import Annotator
+from ultralytics.utils.plotting import Annotator
 
 from app import settings
 from app.logger import get_logger

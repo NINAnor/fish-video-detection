@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from PIL import __version__ as pil_version
 from tqdm import tqdm
-from ultralytics.yolo.utils.checks import check_font, check_version
+from ultralytics.utils.checks import check_font, check_version
 
 from app import settings
 from app.logger import get_logger
@@ -28,7 +28,7 @@ def color_to_hex(color: Tuple[int, int, int]) -> str:
 class Annotator:  # pylint: disable=too-few-public-methods
     """
     A more performant and specialized version of the
-    Annotator class from ultralytics.yolo.utils.plotting
+    Annotator class from ultralytics.utils.plotting
     """
 
     def __init__(

@@ -9,19 +9,18 @@ packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-PyQt6 = "^6.4.2"
+PyQt6 = "~=6.5.0"
 pyqtdarktheme = "^2.1.0"
-ultralytics = "^8.0.38"
+ultralytics = "~=8.2.0"
 tqdm = "^4.64.1"
 ffmpeg-python = "^0.2.0"
 aspose-cells = "^23.2.0"
 aspose-cells-python = "^23.2.0"
 fpdf = "^1.7.2"
-torch = "^1.13.1"
-torchvision = "^0.14.1"
+torchvision = "^0.19.0"
 poethepoet = "^0.18.1"
 xlsxwriter = "^3.1.0"
-av = "^10.0.0"
+av = "^12.3.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.0.0"

@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.11-bookworm
 
 ADD \
     https://github.com/NINAnor/fisk-ai/releases/download/v0.1.0/v8m-classes-augmented.pt \
@@ -17,7 +17,7 @@ RUN --mount=type=cache,sharing=locked,target=/var/cache/apt \
     apt-get update && \
     apt-get install -qy --no-install-recommends \
         libgl1 libxkbcommon0 libegl1 libdbus-1-3 \
-        libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxkbcommon-x11-0
+        libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxkbcommon-x11-0 libxcb-cursor0
 
 WORKDIR /app
 
