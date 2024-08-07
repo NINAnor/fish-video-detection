@@ -1,5 +1,5 @@
 x-common: &common
-  image: ghcr.io/ninanor/bachelor-oppgave-nina:nina
+  image: ghcr.io/ninanor/fisk-ai:main
   build: .
   deploy:
     resources:
