@@ -37,7 +37,7 @@ def extract_images_from_video(video_path, output_folder):
 
     cap.release()
 
-# The following is my attempt to substitute the function "extract_images_from_video_ffmpeg to avoid using ffmpeg"
+# The following function is my attempt to substitute the function "extract_images_from_video_ffmpeg to avoid using ffmpeg"
 def extract_images_from_video_av(video_path, output_folder):
     video_path = Path(video_path)  # Ensure it's a Path object
     video_name = video_path.stem  # Get the file name without extension
